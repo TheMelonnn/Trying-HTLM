@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tes static by neppu</title>
+    <style>
+        .box-background2 {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #CAE9FF;
+            z-index: -1;
+        }
+
+        .box-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 282px;
+            background-color: #023B70;
+            z-index: -1;
+        }
+        
+        .content {
+            font-family: "Inter", sans-serif;
+        }
+
+        .dashboard {
+            position: absolute;
+            top: 20px;
+            left: 350px;
+            bottom: 20px;
+            right: 20px;
+            height: 40px;
+            background-color: #CAE9FF;
+            z-index: 2;
+        }
+
+        .matkul {
+            width: 200px;
+            height: 40px;
+            background-color: #0E5699;
+            margin-top: 20px;
+            margin-left: 25px;
+            line-height: 40px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .selected-matkul {
+            width: 200px;
+            height: 40px;
+            background-color: #3F82C1;
+            margin-top: 20px;
+            margin-left: 25px;
+            line-height: 40px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .content-box {
+            position: absolute;
+            top: 150px; /* Mengatur jarak dari atas box-background2 */
+            left: 350px; /* Mengatur jarak dari kiri box-background2 */
+            bottom: 20px; /* Mengatur jarak dari bawah box-background2 */
+            right: 20px; /* Mengatur jarak dari kanan box-background2 */
+            height: 1200px;
+            background-color: #FFFFFE;
+            padding: 30px; /* Mengatur padding dalam box konten */
+            z-index: 2; /* Mengatur z-index agar box konten berada di atas box background */
+        }
+
+        .dropdown {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-top: 20px; /* Mengatur margin atas untuk dropdown */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan shadow outer */
+            cursor: pointer; /* Menambahkan cursor pointer untuk menunjukkan dropdown dapat di klik */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #FFFFFE;
+            width: 98.5%;
+            margin-top: 1px;
+            padding: 10px;
+            z-index: 3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+        .content-below-dropdown {
+            
+        }
+
+        .quiz-box {
+
+            top: 20px; /* Mengatur jarak dari atas box-background2 */
+            left: 20px; /* Mengatur jarak dari kiri box-background2 */
+            bottom: 20px; /* Mengatur jarak dari bawah box-background2 */
+            right: 20px; /* Mengatur jarak dari kanan box-background2 */
+            background-color: #FFFFFE;
+            padding: 10px;
+            z-index: 3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .inside-quiz-box {
+
+            top: 20px; /* Mengatur jarak dari atas box-background2 */
+            left: 20px; /* Mengatur jarak dari kiri box-background2 */
+            bottom: 20px; /* Mengatur jarak dari bawah box-background2 */
+            right: 20px; /* Mengatur jarak dari kanan box-background2 */
+            width: 550px;
+            background-color: #FFFFFE;
+            padding: 10px;
+            z-index: 3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: left;
+            background-color: #FFFFFE;
+            color: #000000;
+            cursor: pointer;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-submit {
+            display: block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #007BFF;
+            color: #000000;
+            cursor: pointer;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button.selected {
+            background-color: #D4D4D4;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box-background2"></div>
+    <div class="box-background"></div>
+    <img src="logo-labit.jpg" alt="Logo Labit" width="200px" height="200px"
+
+    <div class="content">
+        <div class="dashboard">
+            <h3>Ξ&emsp;&emsp;Home&emsp;&emsp;About Us&emsp;&emsp;Other System v</h3>
+        </div>
+
+        <div class="selected-matkul">
+        <h4>Pemrograman Dasar</h4>
+        </div>
+
+        <div class="matkul">
+        <h4>Pemrograman Lanjut</h4>
+        </div>
+
+        <div class="matkul">
+        <h4>Pemrograman OOP</h4>
+        </div>
+
+        <div class="matkul">
+        <h4>Struktur Data</h4>
+        </div>
+
+        <div class="content-box">
+            <h1>Content</h1>
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Modul 1</span>
+                <div class="dropdown-content">
+                <h3>Judul Materi Modul 1</h3>
+                    <p>Penjalasan Materi Modul 1 ....................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ............................................................................................................................................................</p>
+                <h3>Video Penjelasan: </h3>
+                    <video width="80%" height="80%" controls>
+                        <source src="Tes Video HTML.m4v" type="video/mp4">
+                    </video>
+                    <p>Atau masuk ke link: </p>
+                    <p>www.iniceritanyalinkvideo.go.id</p>
+                    <br/>
+
+                        <div class="quiz-box">
+                            <h3>Quiz :</h3>
+                            <h4>1. Soal quiz pertama!</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <h4>2. Soal quiz Kedua?</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <div class="button-submit">Submit</div>
+                        </div>
+                </div>
+            </div>
+            
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Modul 2</span>
+                <div class="dropdown-content">
+                <h3>Judul Materi Modul 2</h3>
+                    <p>Penjalasan Materi Modul 2 ....................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ............................................................................................................................................................</p>
+                <h3>Video Penjelasan: </h3>
+                    <video width="80%" height="80%" controls>
+                        <source src="Tes Video HTML.m4v" type="video/mp4">
+                    </video>
+                    <p>Atau masuk ke link: </p>
+                    <p>www.iniceritanyalinkvideo.go.id</p>
+                    <br/>
+
+                        <div class="quiz-box">
+                            <h3>Quiz :</h3>
+                            <h4>1. Soal quiz pertama!</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <h4>2. Soal quiz Kedua?</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <div class="button-submit">Submit</div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Modul 3</span>
+                <div class="dropdown-content">
+                <h3>Judul Materi Modul 3</h3>
+                    <p>Penjalasan Materi Modul 3 ....................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ............................................................................................................................................................</p>
+                <h3>Video Penjelasan: </h3>
+                    <video width="80%" height="80%" controls>
+                        <source src="Tes Video HTML.m4v" type="video/mp4">
+                    </video>
+                    <p>Atau masuk ke link: </p>
+                    <p>www.iniceritanyalinkvideo.go.id</p>
+                    <br/>
+
+                        <div class="quiz-box">
+                            <h3>Quiz :</h3>
+                            <h4>1. Soal quiz pertama!</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <h4>2. Soal quiz Kedua?</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <div class="button-submit">Submit</div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Modul 4</span>
+                <div class="dropdown-content">
+                <h3>Judul Materi Modul 4</h3>
+                    <p>Penjalasan Materi Modul 4 ....................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ............................................................................................................................................................</p>
+                <h3>Video Penjelasan: </h3>
+                    <video width="80%" height="80%" controls>
+                        <source src="Tes Video HTML.m4v" type="video/mp4">
+                    </video>
+                    <p>Atau masuk ke link: </p>
+                    <p>www.iniceritanyalinkvideo.go.id</p>
+                    <br/>
+
+                        <div class="quiz-box">
+                            <h3>Quiz :</h3>
+                            <h4>1. Soal quiz pertama!</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <h4>2. Soal quiz Kedua?</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <div class="button-submit">Submit</div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Modul 5</span>
+                <div class="dropdown-content">
+                <h3>Judul Materi Modul 5</h3>
+                    <p>Penjalasan Materi Modul 5 ....................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ............................................................................................................................................................</p>
+                <h3>Video Penjelasan: </h3>
+                    <video width="80%" height="80%" controls>
+                        <source src="Tes Video HTML.m4v" type="video/mp4">
+                    </video>
+                    <p>Atau masuk ke link: </p>
+                    <p>www.iniceritanyalinkvideo.go.id</p>
+                    <br/>
+
+                        <div class="quiz-box">
+                            <h3>Quiz :</h3>
+                            <h4>1. Soal quiz pertama!</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <h4>2. Soal quiz Kedua?</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <div class="button-submit">Submit</div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Modul 6</span>
+                <div class="dropdown-content">
+                <h3>Judul Materi Modul 6</h3>
+                    <p>Penjalasan Materi Modul 6 ....................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ................................................................................................................................................................................</p>
+                    <p> ............................................................................................................................................................</p>
+                <h3>Video Penjelasan: </h3>
+                    <video width="80%" height="80%" controls>
+                        <source src="Tes Video HTML.m4v" type="video/mp4">
+                    </video>
+                    <p>Atau masuk ke link: </p>
+                    <p>www.iniceritanyalinkvideo.go.id</p>
+                    <br/>
+
+                        <div class="quiz-box">
+                            <h3>Quiz :</h3>
+                            <h4>1. Soal quiz pertama!</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <h4>2. Soal quiz Kedua?</h4>
+                             <div class="inside-quiz-box">
+                             <div class="button" onclick="changeColor(this)">A. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">B. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">C. Jawaban</div>
+                             <div class="button" onclick="changeColor(this)">D. Jawaban</div>
+                             </div>
+                            <br/>
+                            <div class="button-submit">Submit</div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span>Final Quiz</span>
+                <div class="dropdown-content">
+                <h3>Final Quiz</h3>
+                    
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <script>
+        function toggleDropdown(dropdown) {
+            dropdown.classList.toggle('active');
+        }
+
+        function changeColor(button) {
+            var buttons = document.getElementsByClassName('button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('selected');
+            }
+
+            button.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
